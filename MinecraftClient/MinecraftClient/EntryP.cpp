@@ -1,100 +1,54 @@
-#include "Common/glad_wrapper.h"
 #include <GLFW/glfw3.h>
-
-#include "Common/gamemain.h"
-
 #include <iostream>
+#include "Common/IoC/Container.h"
+
+#define GLFW_INCLUDE_NONE 
 
 
-using namespace GNF::Common;
+
+
+#include "Core/Game.h"
+using namespace GNF::Common::IoC;
+
+
+#ifdef _DEBUG
+
+#pragma comment(linker, "/subsystem:console")
+#pragma comment(lib,"mc_shared_utils_d.lib")
+#pragma comment(lib,"opengl_utils_d.lib")
 
 int main()
 {
-#if defined(DEBUG) || defined(_DEBUG)
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-#endif
-    GameMain* game = GameMain::Build();
     
+    auto c = Container::Build();
+    c->RegisterSingleton<GNF::SU::Logging::ILogger>(std::function<std::shared_ptr<GNF::SU::Logging::ILogger>()>([]() {return std::shared_ptr<GNF::SU::Logging::ILogger>(new GNF::SU::Logging::Logger()); }));
+
+    auto logger = c->Resolve<GNF::SU::Logging::ILogger>();
+    logger.get()->Info("Program Has Started");
+
+    auto game = GNF::Core::Game::Build();
+    game->Init();
     game->Run();
+    return 0;
    
 }
 
-/*
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
+#else
 
-// settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+#pragma comment( linker, "/subsystem:windows" )
+#pragma comment(lib,"mc_shared_utils.lib")
+#pragma comment(lib,"opengl_utils.lib")
 
-int main()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
 {
-    // glfw: initialize and configure
-    // ------------------------------
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    auto c = Container::Build();
+    c.RegisterSingleton<ILogger>(std::function<std::shared_ptr<ILogger>()>([]() {return std::shared_ptr<ILogger>(new Logger()); }));
 
-
-    // glfw window creation
-    // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-    if (window == NULL)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
-    }
-    glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-    // glad: load all OpenGL function pointers
-    // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
-
-    // render loop
-    // -----------
-    while (!glfwWindowShouldClose(window))
-    {
-        // input
-        // -----
-        processInput(window);
-
-
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        glClearColor(1.0f, 0, 0, 1.0f);
-
-        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-        // -------------------------------------------------------------------------------
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-
-    // glfw: terminate, clearing all previously allocated GLFW resources.
-    // ------------------------------------------------------------------
-    glfwTerminate();
-    return 0;
+    auto logger = c.Resolve<ILogger>();
+    logger.get()->Info("Program Has Started");
 }
 
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow* window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
 
-// glfw: whenever the window size changed (by OS or user resize) this callback function executes
-// ---------------------------------------------------------------------------------------------
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    // make sure the viewport matches the new window dimensions; note that width and 
-    // height will be significantly larger than specified on retina displays.
-    glViewport(0, 0, width, height);
-}*/
+#endif
+

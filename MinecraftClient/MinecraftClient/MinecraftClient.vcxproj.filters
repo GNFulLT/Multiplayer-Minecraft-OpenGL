@@ -6,188 +6,36 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Common">
-      <UniqueIdentifier>{4aeb9a07-ce94-48dd-a5a8-c5d9bbe2b21c}</UniqueIdentifier>
+      <UniqueIdentifier>{f9c135a1-ce59-4715-a7d8-5e51fc906ce5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Primitive">
-      <UniqueIdentifier>{a7f1c216-f257-428d-abec-0b3d1edac35a}</UniqueIdentifier>
+    <Filter Include="Common\IoC">
+      <UniqueIdentifier>{066b2dca-a83e-48cb-a2a1-18d11ba49759}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Rendering">
-      <UniqueIdentifier>{5de55d7c-d20d-42f4-83c9-a6dc8a5e3494}</UniqueIdentifier>
+    <Filter Include="Core">
+      <UniqueIdentifier>{5b1ac765-d5d0-4027-ad47-13db9b0326c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders">
-      <UniqueIdentifier>{91923507-f79a-4e71-9181-bae2197f531a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GLFramework">
-      <UniqueIdentifier>{52727027-796b-4197-8368-54b5343f7be0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Utils">
-      <UniqueIdentifier>{d24bb4a2-fbf2-4e9d-a6ee-e11eac920886}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="World">
-      <UniqueIdentifier>{fdc42e18-d964-4dc8-9bd4-c43ecb37bb39}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common\Event">
-      <UniqueIdentifier>{ddc7c63a-584a-440b-9f6f-5a75781c6f89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common\Camera">
-      <UniqueIdentifier>{806ccc55-a906-4ee0-8603-c94a976535e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common\Input">
-      <UniqueIdentifier>{159ba787-5802-4dd8-a20b-7243f8cbfaa5}</UniqueIdentifier>
+    <Filter Include="Core\States">
+      <UniqueIdentifier>{fcd93201-4abe-4ae4-8795-d53de52df23f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryP.cpp" />
-    <ClCompile Include="glad.c">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\window.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\gamemain.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Primitive\Cube.cpp">
-      <Filter>Primitive</Filter>
-    </ClCompile>
-    <ClCompile Include="GLFramework\GLShader.cpp">
-      <Filter>GLFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils\Utils.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\image.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils\UtilsCubemap.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\FPSCamera.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Event\Event.cpp">
-      <Filter>Common\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Event\EventHandler.cpp">
-      <Filter>Common\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="InputSystem.cpp">
-      <Filter>Common\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Camera\FPSCamera.cpp">
-      <Filter>Common\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="World\World.cpp">
-      <Filter>World</Filter>
-    </ClCompile>
-    <ClCompile Include="Primitive\Chunk.cpp">
-      <Filter>Primitive</Filter>
+    <ClCompile Include="Core\Game.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common\window.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="Common\IoC\Container.h">
+      <Filter>Common\IoC</Filter>
     </ClInclude>
-    <ClInclude Include="Common\gamemain.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="Core\Game.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Common\ISystem.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="Core\States\IState.h">
+      <Filter>Core\States</Filter>
     </ClInclude>
-    <ClInclude Include="Common\glad_wrapper.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="Core\IGameThing.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Primitive\Cube.h">
-      <Filter>Primitive</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive\VertexType.h">
-      <Filter>Primitive</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive\Mesh.h">
-      <Filter>Primitive</Filter>
-    </ClInclude>
-    <ClInclude Include="Rendering\IRenderable.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="GLFramework\GLShader.h">
-      <Filter>GLFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Utils.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Bitmap.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\image.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\UtilsCubemap.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\UtilsMath.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="World\World.h">
-      <Filter>World</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\FPSCamera.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="World\Block.h">
-      <Filter>World</Filter>
-    </ClInclude>
-    <ClInclude Include="World\BlockHelper.h">
-      <Filter>World</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Event\FireableGEventHandler.h">
-      <Filter>Common\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Event\GEventHandlerBase.h">
-      <Filter>Common\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Event\GEventHandlerMember.h">
-      <Filter>Common\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Event\Event.h">
-      <Filter>Common\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Event\EventHandler.h">
-      <Filter>Common\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\IInputSystem.h">
-      <Filter>Common\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="InputSystem.h">
-      <Filter>Common\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="VirtualKeyCodes.h">
-      <Filter>Common\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Camera\FPSCamera.h">
-      <Filter>Common\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Camera\ICamera.h">
-      <Filter>Common\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive\Chunk.h">
-      <Filter>Primitive</Filter>
-    </ClInclude>
-    <ClInclude Include="Direction.h">
-      <Filter>Primitive</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shaders\basicfrag.frag">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\basicvertex.vert">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\skybox.frag">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\skybox.vert">
-      <Filter>Shaders</Filter>
-    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Windowing">
+      <UniqueIdentifier>{d02addb9-f9df-4a3a-b7b4-cb02b3a3828b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{3697e418-e0f8-4472-801e-0670a7b2858a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Keyboard">
+      <UniqueIdentifier>{95683bc6-f822-4fe8-a4d9-b6b7302813e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\opengl_utils\Windowing\Window.h">
+      <Filter>Windowing</Filter>
+    </ClInclude>
+    <ClInclude Include="include\opengl_utils\Keyboard\Glfw_keyboard.h">
+      <Filter>Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="include\opengl_utils\Mouse\Glfw_mouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\Windowing\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\Keyboard\Glfw_keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\Mouse\Glfw_mouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
