@@ -8,6 +8,12 @@
 #include <functional>
 #include <format>
 
+#ifndef DEBUG_NEW_MC
+#define DEBUG_NEW_MC
+#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#define new DEBUG_NEW
+#endif
+
 namespace GNF::Common::IoC
 {
 	class Container
@@ -64,9 +70,12 @@ namespace GNF::Common::IoC
 					throw std::runtime_error{ std::format("Could not find factory method for type [{}] in container",typeid(T).name()) };
 				}
 			}
-
+			~Container() {
+				int a = 5;
+			}
 		private:
 			Container() = default;
+			
 		private:
 			//!: Bool Value Checks it is singleton or scoped
 			std::unordered_map<std::type_index, std::pair<bool, std::any>> m_container;

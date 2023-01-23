@@ -9,6 +9,8 @@ namespace GNF::OpenGL::Keyboard
 	{
 	public:
 		GLFW_Keyboard(SU::Logging::ILogger* logger);
+		virtual ~GLFW_Keyboard() = default;
+
 		virtual bool IsKeyPressed(SU::Keyboard::KEY_CODE code) override;
 		
 		void KeyPressed(int keyCode);

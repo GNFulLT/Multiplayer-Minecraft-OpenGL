@@ -143,11 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Common\Timer\Statistics.cpp" />
     <ClCompile Include="Core\Game.cpp" />
     <ClCompile Include="EntryP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\IoC\Container.h" />
+    <ClInclude Include="Common\Timer\Statistics.h" />
     <ClInclude Include="Core\Game.h" />
     <ClInclude Include="Core\IGameThing.h" />
     <ClInclude Include="Core\States\IState.h" />

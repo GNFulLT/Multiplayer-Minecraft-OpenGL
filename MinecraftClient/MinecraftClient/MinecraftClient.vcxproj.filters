@@ -17,11 +17,17 @@
     <Filter Include="Core\States">
       <UniqueIdentifier>{fcd93201-4abe-4ae4-8795-d53de52df23f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Timer">
+      <UniqueIdentifier>{b4fa4167-13ea-477b-834c-01330f96a832}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryP.cpp" />
     <ClCompile Include="Core\Game.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Timer\Statistics.cpp">
+      <Filter>Common\Timer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +42,9 @@
     </ClInclude>
     <ClInclude Include="Core\IGameThing.h">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Timer\Statistics.h">
+      <Filter>Common\Timer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@ namespace GNF::OpenGL::Mouse
 	{
 		public:
 			GLFW_Mouse(SU::Logging::ILogger* logger);
-
+			virtual ~GLFW_Mouse() = default;
 			virtual const glm::vec2 GetMousePos() override;
 			virtual const glm::vec2 GetPrevMousePos() override;
 			void SetMousePos(float posX, float posY);

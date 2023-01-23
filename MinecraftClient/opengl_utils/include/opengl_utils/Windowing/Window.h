@@ -2,6 +2,14 @@
 
 
 
+
+
+#ifdef _DEBUG
+	#include <crtdbg.h>
+	#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+	#define new DEBUG_NEW
+#endif
+
 #ifdef OPENGL_UTILS_EXPORTS
 #define OPENGL_UTILS_API __declspec(dllexport)
 #else
@@ -21,6 +29,10 @@ namespace GNF::OpenGL::Windowing
 	{
 		public:
 			OpenGL_Window(const SU::Windowing::WindowProps& props,SU::Logging::ILogger* logger);
+			virtual ~OpenGL_Window()
+			{
+				glfwDestroyWindow(m_nativeWindow);
+			}
 			virtual bool IsOpen() override;
 			virtual void Init(SU::Windowing::WindowType windowType = SU::Windowing::GLFW) override;
 			virtual const SU::Windowing::WindowProps* GetProps() override;
@@ -48,6 +60,7 @@ namespace GNF::OpenGL::Windowing
 			void mouse_clicked_callback(GLFWwindow* window, int button, int action, int mods);
 			void keyboard_callback(GLFWwindow* w, int key, int scancode, int action, int mods);
 
+		
 
 		private:
 			void InitGLFW();
