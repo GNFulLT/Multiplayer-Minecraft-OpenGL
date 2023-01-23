@@ -10,7 +10,7 @@ namespace GNF::Core
 		GNF::SU::Windowing::WindowProps props(str, 640, 428, 0, 0);
 		auto logger = GNF::Common::IoC::Container::GetInstance()->Resolve<GNF::SU::Logging::ILogger>();
 		m_window.reset(new GNF::OpenGL::Windowing::OpenGL_Window(props, logger.get()));
-		m_window->Init(SU::Windowing::GLFW);
+		m_window->Init(SU::Windowing::Win32);
 
 	}
 	void Game::Update()
@@ -42,7 +42,7 @@ namespace GNF::Core
 		m_statistics.Start();
 		while (m_window->IsOpen())
 		{
-			m_window->ClearColor(0.f,1.f,1.f,1.f);
+			m_window->ClearColor(1.f,0.f,1.f,1.f);
 
 			m_window->ClearBufferBit();
 

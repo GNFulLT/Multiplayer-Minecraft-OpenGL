@@ -39,6 +39,12 @@
     <ClInclude Include="include\opengl_utils\Mouse\Glfw_mouse.h">
       <Filter>Mouse</Filter>
     </ClInclude>
+    <ClInclude Include="include\opengl_utils\Windowing\GLFW_Window.h">
+      <Filter>Windowing</Filter>
+    </ClInclude>
+    <ClInclude Include="include\opengl_utils\Windowing\Win32_Window.h">
+      <Filter>Windowing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -47,16 +53,22 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bin\Windowing\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bin\Keyboard\Glfw_keyboard.cpp">
+    <ClCompile Include="cpp\Keyboard\Glfw_keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bin\Mouse\Glfw_mouse.cpp">
+    <ClCompile Include="cpp\Mouse\Glfw_mouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Windowing\GLFW_Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Windowing\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Windowing\Win32_Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

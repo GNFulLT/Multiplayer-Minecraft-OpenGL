@@ -99,7 +99,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>glfw3.lib;mc_shared_utils_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;mc_shared_utils_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -141,7 +141,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>glfw3.lib;mc_shared_utils_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;mc_shared_utils_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -172,13 +172,17 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="include\opengl_utils\Keyboard\Glfw_keyboard.h" />
     <ClInclude Include="include\opengl_utils\Mouse\Glfw_mouse.h" />
+    <ClInclude Include="include\opengl_utils\Windowing\GLFW_Window.h" />
+    <ClInclude Include="include\opengl_utils\Windowing\Win32_Window.h" />
     <ClInclude Include="include\opengl_utils\Windowing\Window.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bin\Keyboard\Glfw_keyboard.cpp" />
-    <ClCompile Include="bin\Mouse\Glfw_mouse.cpp" />
-    <ClCompile Include="bin\Windowing\Window.cpp" />
+    <ClCompile Include="cpp\Keyboard\Glfw_keyboard.cpp" />
+    <ClCompile Include="cpp\Mouse\Glfw_mouse.cpp" />
+    <ClCompile Include="cpp\Windowing\GLFW_Window.cpp" />
+    <ClCompile Include="cpp\Windowing\Win32_Window.cpp" />
+    <ClCompile Include="cpp\Windowing\Window.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="pch.cpp">

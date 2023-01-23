@@ -16,6 +16,7 @@ using namespace GNF::Common::IoC;
 #define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #define new DEBUG_NEW
 #endif
+
 #pragma comment(linker, "/subsystem:console")
 #pragma comment(lib,"mc_shared_utils_d.lib")
 #pragma comment(lib,"opengl_utils_d.lib")
